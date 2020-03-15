@@ -104,27 +104,3 @@ const run = async () => {
 }
 process.title = "dddd"
 run()
-
-
-/*
-
-Config format:
-
-{
-	checkInterval: 5,
-	records: [
-		{
-			domain: "example.com",
-			names: [
-				"@",
-				"www",
-				"blog",
-				"whatever"
-			]
-		}
-	]
-}
-
-checkInterval is in minutes but can have floating point numbers
-
-*/
