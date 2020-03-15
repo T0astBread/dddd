@@ -8,7 +8,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "cd test && node index.js"
+    "test": "cd test && node --unhandled-rejections=strict index.js"
   },
   "repository": {
     "type": "git",
