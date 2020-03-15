@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/t0astbread/dddd/issues"
   },
-  "homepage": "https://github.com/t0astbread/dddd#readme"
+  "homepage": "https://github.com/t0astbread/dddd#readme",
+  "bin": {
+    "dddd": "index.js"
+  }
 }

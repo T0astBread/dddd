@@ -1,20 +1,8 @@
+#!/usr/bin/env node
+
 const fs = require("fs")
 const axios = require("axios").default
-
-const DO_API_URL = "https://api.digitalocean.com/v2"
-
-
-const apiRequest = (apiToken, request) => {
-	console.info("API", request)
-
-	return axios.request({
-		...request,
-		url: `${DO_API_URL}${request.url}`,
-		headers: {
-			Authorization: `Bearer ${apiToken}`
-		}
-	}).then(r => r.data)
-}
+const { apiRequest, sleep } = require("./utils")
 
 
 const updateDNS = async (config, apiToken) => {
@@ -106,14 +94,15 @@ const run = async () => {
 	const configText = fs.readFileSync(configPath, {
 		encoding: "UTF-8"
 	})
-	console.info("Config", configText)
 	const config = JSON.parse(configText)
+	console.info("Config", config)
 
 	while(true) {
 		updateDNS(config, apiToken)
-		await new Promise(r => setTimeout(r, Math.floor(config.checkInterval * 60 * 1000)))
+		await sleep(Math.floor(config.checkInterval * 60))
 	}
 }
+process.title = "dddd"
 run()
 
 
