@@ -2,6 +2,7 @@
 
 const fs = require("fs")
 const axios = require("axios").default
+const util = require("util")
 const { apiRequest, sleep } = require("./utils")
 
 
@@ -95,7 +96,10 @@ const run = async () => {
 		encoding: "UTF-8"
 	})
 	const config = JSON.parse(configText)
-	console.info("Config", config)
+	console.info("Config", util.inspect(config, {
+		depth: null,
+		colors: true,
+	}))
 
 	while(true) {
 		updateDNS(config, apiToken)
