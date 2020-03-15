@@ -27,7 +27,7 @@ Where config-file is a JSON file of the following format:
 			"names": [
 				"@",
 				"www",
-				"whatever",
+				"whatever"
 			]
 		}
 	]
