@@ -51,3 +51,7 @@ Additionally the __DO_API_TOKEN environment variable__ needs to be
 set to a read/write DigitalOcean API token. You can generate one on
 the `Manage > API > Tokens/Keys` page at
 [cloud.digitalocean.com](https://cloud.digitalocean.com).
+
+Note that, despite the name, the program does not daemonize. Usually,
+something else will do that for you (like an init system). The name
+only contains "daemon" because it sounds cooler that way.
