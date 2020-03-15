@@ -1,8 +1,27 @@
 {
-  "name": "dyndns",
-  "private": true,
+  "name": "dddd",
+  "version": "0.1.0",
+  "description": "DigitalOcean Dynamic DNS Daemon",
   "main": "index.js",
   "dependencies": {
     "axios": "^0.19.2"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/t0astbread/dddd.git"
+  },
+  "keywords": [
+    "digitalocean",
+    "dyndns"
+  ],
+  "author": "T0astBread <tb@t0ast.cc>",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/t0astbread/dddd/issues"
+  },
+  "homepage": "https://github.com/t0astbread/dddd#readme"
 }
