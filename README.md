@@ -1,5 +1,5 @@
 # dddd
-![Tests](https://github.com/T0astBread/dddd/workflows/Tests/badge.svg)
+![Actions](https://github.com/T0astBread/dddd/workflows/Actions/badge.svg)
 
 is the _DigitalOcean Dynamic DNS Daemon_.
 

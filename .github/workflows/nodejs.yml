@@ -1,6 +1,6 @@
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Tests
+name: Actions
 
 on:
   push:
@@ -21,3 +21,18 @@ jobs:
       env:
         DO_API_TOKEN: ${{ secrets.DO_API_TOKEN }}
         TEST_DOMAIN: ${{ secrets.TEST_DOMAIN }}
+
+  publish:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
