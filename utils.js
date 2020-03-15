@@ -12,7 +12,13 @@ const apiRequest = (apiToken, request) => {
 		headers: {
 			Authorization: `Bearer ${apiToken}`
 		}
-	}).then(r => r.data)
+	}).then(r => {
+		console.info("API (limit/hour, remaining, reset)",
+			r.headers["ratelimit-limit"],
+			r.headers["ratelimit-remaining"],
+			r.headers["ratelimit-reset"])
+		return r.data
+	})
 }
 
 
