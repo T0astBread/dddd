@@ -1,5 +1,5 @@
 {
-  "name": "dddd",
+  "name": "@t0ast/dddd",
   "version": "0.1.0",
   "description": "DigitalOcean Dynamic DNS Daemon",
   "main": "index.js",
