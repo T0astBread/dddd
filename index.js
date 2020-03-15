@@ -106,5 +106,11 @@ const run = async () => {
 		await sleep(Math.floor(config.checkInterval * 60))
 	}
 }
+
 process.title = "dddd"
+process.on("SIGINT", () => {
+	console.info("Caught an interrupt")
+	process.exit()
+})
+
 run()
